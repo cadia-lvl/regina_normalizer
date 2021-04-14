@@ -3,7 +3,7 @@ import re
 import pos
 import sys
 
-from number_help import *
+import number_help as nh 
 
 import abbr_patterns as ap
 import abbr_functions as af
@@ -60,6 +60,11 @@ def fill_dict(word, tag, tuples, type_dict, cols):
     tmpword = ""
     for i in range(len(tuples)):
         if re.findall(tuples[i][0], word) and re.findall(tuples[i][1], tag):
+            try:
+                #print(tuples[i][2])
+                print(tuples[i][3])
+            except:
+                pass
             type_dict[word][tuples[i][2]] = tuples[i][3]
     for col in cols:
         tmpword += type_dict[word][col]
@@ -86,72 +91,71 @@ def wlink_fun(text, ptrn=ap.link_ptrn_all):
     return substr
 
 # Fill in the number appropriately based on pattern
-def number_findall(word, tag):
+def number_findall(word, tag, domain):
     normalized_str = ""
-    if re.findall(ordinal_thousand_ptrn, word):
-        ordinal_thousand_dict = make_dict(word, int_cols_thousand)
-        tmpword = fill_dict(word, tag, ordinal_thousand_tuples, ordinal_thousand_dict, int_cols_thousand)
+    if re.findall(nh.ordinal_thousand_ptrn, word):
+        ordinal_thousand_dict = make_dict(word, nh.int_cols_thousand)
+        tmpword = fill_dict(word, tag, ordinal_thousand_tuples, ordinal_thousand_dict, nh.int_cols_thousand)
 
-    elif re.findall(ordinal_million_ptrn, word):
-        ordinal_million_dict = make_dict(word, int_cols_million)
-        tmpword = fill_dict(word, tag, ordinal_million_tuples, ordinal_million_dict, int_cols_million)
+    elif re.findall(nh.ordinal_million_ptrn, word):
+        ordinal_million_dict = make_dict(word, nh.int_cols_million)
+        tmpword = fill_dict(word, tag, ordinal_million_tuples, ordinal_million_dict, nh.int_cols_million)
 
-    elif re.findall(ordinal_big_ptrn, word):
-        ordinal_big_dict = make_dict(word, int_cols_big)
-        tmpword = fill_dict(word, tag, ordinal_big_tuples, ordinal_big_dict, int_cols_big)
+    elif re.findall(nh.ordinal_big_ptrn, word):
+        ordinal_big_dict = make_dict(word, nh.int_cols_big)
+        tmpword = fill_dict(word, tag, ordinal_big_tuples, ordinal_big_dict, nh.int_cols_big)
 
-    elif re.findall(cardinal_thousand_ptrn, word):
-        cardinal_thousand_dict = make_dict(word, int_cols_thousand)
-        tmpword = fill_dict(word, tag, cardinal_thousand_tuples, cardinal_thousand_dict, int_cols_thousand)
+    elif re.findall(nh.cardinal_thousand_ptrn, word):
+        cardinal_thousand_dict = make_dict(word, nh.int_cols_thousand)
+        tmpword = fill_dict(word, tag, cardinal_thousand_tuples, cardinal_thousand_dict, nh.int_cols_thousand)
 
-    elif re.findall(cardinal_million_ptrn, word):
-        cardinal_million_dict = make_dict(word, int_cols_million)
-        tmpword = fill_dict(word, tag, cardinal_million_tuples, cardinal_million_dict, int_cols_million)
+    elif re.findall(nh.cardinal_million_ptrn, word):
+        cardinal_million_dict = make_dict(word, nh.int_cols_million)
+        tmpword = fill_dict(word, tag, cardinal_million_tuples, cardinal_million_dict, nh.int_cols_million)
 
-    elif re.findall(cardinal_big_ptrn, word):
-        cardinal_big_dict = make_dict(word, int_cols_big)
-        tmpword = fill_dict(word, tag, cardinal_big_tuples, cardinal_big_dict, int_cols_big)
+    elif re.findall(nh.cardinal_big_ptrn, word):
+        cardinal_big_dict = make_dict(word, nh.int_cols_big)
+        tmpword = fill_dict(word, tag, cardinal_big_tuples, cardinal_big_dict, nh.int_cols_big)
 
-    elif re.findall(decimal_thousand_ptrn, word):
-        decimal_thousand_dict = make_dict(word, decimal_cols_thousand)
-        tmpword = fill_dict(word, tag, decimal_thousand_tuples, decimal_thousand_dict, decimal_cols_thousand)
+    elif re.findall(nh.decimal_thousand_ptrn, word):
+        decimal_thousand_dict = make_dict(word, nh.decimal_cols_thousand)
+        tmpword = fill_dict(word, tag, decimal_thousand_tuples, decimal_thousand_dict, nh.decimal_cols_thousand)
 
-    elif re.findall(decimal_big_ptrn, word):
-        decimal_big_dict = make_dict(word, decimal_cols_big)
-        tmpword = fill_dict(word, tag, decimal_big_tuples, decimal_big_dict, decimal_cols_big)
+    elif re.findall(nh.decimal_big_ptrn, word):
+        decimal_big_dict = make_dict(word, nh.decimal_cols_big)
+        tmpword = fill_dict(word, tag, decimal_big_tuples, decimal_big_dict, nh.decimal_cols_big)
 
-    elif re.findall(fraction_ptrn, word):
-        fraction_dict = make_dict(word, decimal_cols_thousand)
-        tmpword = fill_dict(word, tag, fraction_tuples, fraction_dict, decimal_cols_thousand)
+    elif re.findall(nh.time_ptrn, word):
+        time_dict = make_dict(word, nh.time_sport_cols)
+        tmpword = fill_dict(word, tag, time_tuples, time_dict, nh.time_sport_cols)
 
-    elif re.findall(time_ptrn, word):
-        time_dict = make_dict(word, time_sport_cols)
-        tmpword = fill_dict(word, tag, time_tuples, time_dict, time_sport_cols)
-
-    elif re.findall(sport_ptrn, word):
-        sport_dict = make_dict(word, time_sport_cols)
-        tmpword = fill_dict(word, tag, sport_tuples, sport_dict, time_sport_cols)
-
+    elif re.findall(nh.fraction_ptrn, word):
+        if domain == 'other' or re.findall("½|⅓|⅔|¼|¾", word):
+            fraction_dict = make_dict(word, nh.decimal_cols_thousand)
+            tmpword = fill_dict(word, tag, fraction_tuples, fraction_dict, nh.decimal_cols_thousand)
+        elif domain == 'sport':
+            sport_dict = make_dict(word, nh.time_sport_cols)
+            tmpword = fill_dict(word, tag, sport_tuples, sport_dict, nh.time_sport_cols)
+     
     elif re.findall("^0\d\.$", word):
         tmpword = digit_ord_fun(word)
-
     else:
         tmpword = digit_fun(word)
     word = tmpword
     return word
 
 # Fill in the number, letter, link or symbol based on the tag of the next word
-def handle_sentence(sent):
+def handle_sentence(sent, domain):
     returnsent = ""
     sentsplit = sent.split()
     tagsent = tagger.tag_sent(sentsplit)
     split_zip = list(zip(sentsplit, list(tagsent[1:]) + [""]))
     for word, nexttag in split_zip:
-        if re.match("\d", word):
-            word = number_findall(word, nexttag)
-        if re.match(roman_letters_ptrn, word):
+        if re.match("[\d½⅓¼⅔¾]", word):
+            word = number_findall(word, nexttag, domain)
+        if re.match(nh.roman_letters_ptrn, word):
             word = " ".join(word)
-        elif re.match(letters_ptrn, word):
+        elif re.match(nh.letters_ptrn, word):
             word = " ".join(word)
         elif re.match(ap.link_ptrn_all, word):
             word = wlink_fun(word)
