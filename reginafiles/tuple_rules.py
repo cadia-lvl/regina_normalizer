@@ -32,9 +32,22 @@ tens_denominator = [(' tíundu', '10'), (' elleftu', '11'), (' tólftu', '12'), 
 dozens_denominator = [(' tuttugustu', '2'), (' þrítugustu', '3'), (' fertugustu', '4'), (' fimmtugustu', '5'), 
                     (' sextugustu', '6'), (' sjötugustu', '7'), (' áttugustu', '8'), (' nítugustu', '9')]
 
-half_zip = [(hálfur, ' hálfur'), (hálfan, ' hálfan'), (hálfum, ' hálfum'), (hálfs, ' hálfs'),
-            (hálf, ' hálf'), (hálfa, ' hálfa'), (hálfri, ' hálfri'), (hálfrar, ' hálfrar'),
-            (hálft, ' hálft'), (hálfu, ' hálfu'), (hálfir, ' hálfir'), (hálfra, ' hálfra'), (nonoun, ' hálfur')]
+half_zip = [(hálfur, ' hálfur', "(1\/2|½)"), (hálfan, ' hálfan', "(1\/2|½)"), (hálfum, ' hálfum', "(1\/2|½)"), (hálfs, ' hálfs', "(1\/2|½)"),
+            (hálf, ' hálf', "(1\/2|½)"), (hálfa, ' hálfa', "(1\/2|½)"), (hálfri, ' hálfri', "(1\/2|½)"), (hálfrar, ' hálfrar', "(1\/2|½)"),
+            (hálft, ' hálft', "(1\/2|½)"), (hálfu, ' hálfu', "(1\/2|½)"), (hálfir, ' hálfir', "(1\/2|½)"), (hálfra, ' hálfra', "(1\/2|½)"), (nonoun, ' hálfur', "(1\/2|½)"),
+            
+            (fractionnom, ' einn þriðji', "(1\/3|⅓)"), (fractiondat, ' einn þriðja', "(1\/3|⅓)"), (fractionacc, ' einum þriðja', "(1\/3|⅓)"),
+            (fractiongen, ' eins þriðja', "(1\/3|⅓)"), (nonoun, ' einn þriðji', "(1\/3|⅓)"),
+
+            (fractionnom, ' einn fjórði', "(1\/4|¼)"), (fractiondat, ' einn fjórða', "(1\/4|¼)"), (fractionacc, ' einum fjórða', "(1\/4|¼)"), 
+            (fractiongen, ' eins fjórða', "(1\/4|¼)"), (nonoun, ' einn fjórði', "(1\/4|¼)"),
+            
+            (fractionnom, ' tveir þriðju', "(2\/3|⅔)"), (fractiondat, ' tvo þriðju', "(2\/3|⅔)"), (fractionacc, ' tveimur þriðju', "(2\/3|⅔)"), 
+            (fractiongen, ' tveggja þriðju', "(2\/3|⅔)"), (nonoun, ' tveir þriðju', "(2\/3|⅔)"),
+
+            (fractionnom, ' þrír fjórðu', "(3\/4|¾)"), (fractiondat, ' þrjá fjórðu', "(3\/4|¾)"), (fractionacc, ' þremur fjórðu', "(3\/4|¾)"),
+            (fractiongen, ' þriggja fjórðu', "(3\/4|¾)"), (nonoun, ' þrír fjórðu', "(3\/4|¾)")]
+
 
 two_ordinal_zip = [(annar, ' annar'),(annan, ' annan'), (öðrum, ' öðrum'),( annars, ' annars'),
                     (aðrir, ' aðrir'), (aðra, ' aðra'), (annarra, ' annarra'),
