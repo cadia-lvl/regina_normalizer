@@ -9,5 +9,5 @@ for rule, string, number in ones_zip:
     cardinal_ones_tuples.append(((ones_ptrn_no11 + number + dec_ptrn), rule, 'ones', string))
     
 for string, number in tens_zip:
-    cardinal_ones_tuples.append((tns_ptrn + number + dec_ptrn, '.*$', 'dozens', string))
+    cardinal_ones_tuples.append((tns_ptrn + number + dec_ptrn, '.*', 'dozens', string))
 

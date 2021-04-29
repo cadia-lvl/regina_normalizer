@@ -1,26 +1,26 @@
 from number_patterns import *
 from tuple_rules import *
 
-ordinal_big_tuples = [(ones_ptrn_no11 + "1\.000\.0([01][1-9]|10)\.$", '^.*$', 'millions', ' einmilljónasta og'),
-    ("^1\.000\.0([01][1-9]|10)\.$", '^.*$', 'millions',' milljónasta og'),
-    (ones_ptrn_no11 + "1\.000\.000\.$", '^.*$', 'millions', ' einmilljónasta'),
-    ("^1\.000\.000\.$", '^.*$', 'millions', ' milljónasta'),
-    (tns_ptrn + "10\.000\.0([01][1-9]|10)\.$", '^.*$', 'ten millions', ' tímilljónasta og'),
-    (tns_ptrn + "10\.000\.000\.$", '^.*$', 'ten millions', ' tímilljónasta'),
-    (hndrds_ptrn_11 + "100\.000\.0([01][1-9]|10)\.$", '^.*$', 'hundred millions', ' eitt hundraðmilljónasta og'),
-    ("^100\.000\.0([01][1-9]|10)\.$", '^.*$', 'hundred millions', 'hundraðmilljónasta og'),
-    (hndrds_ptrn_11 + "100(\.000){2}\.$", '^.*$', 'hundred millions', ' eitt hundraðmilljónasta'),
-    ("^100(\.000){2}\.$", '^.*$', 'hundred millions', 'hundraðmilljónasta'),
-    (ones_ptrn_no11 + "1(\.000){2}\.0([01][1-9]|10)\.$", '^.*$', 'billions', ' einmilljarðasta og'),
-    ("^1(\.000){2}\.0([01][1-9]|10)\.$", '^.*$', 'billions', 'milljarðasta og'),
-    (tns_ptrn + "10(\.000){2}\.0([01][1-9]|10)\.$", '^.*$', 'ten billions', 'tímilljarðasta og'),
-    (hndrds_ptrn_11 + "100(\.000){2}\.0([01][1-9]|10)\.$", '^.*$', 'hundred billions', ' eitt hundrað milljarðasta og'),
-    ("^100(\.000){2}\.0([01][1-9]|10)\.$", '^.*$', 'hundred billions', 'hundraðmilljarðasta og'),
-    (ones_ptrn_no11 + "1(\.000){3}\.$", '^.*$', 'billions', ' einmilljarðasta'),
-    ("^1(\.000){3}\.$", '^.*$', 'billions', 'milljarðasta'),
-    (tns_ptrn + "10(\.000){3}\.$", '^.*$', 'ten billions', 'tímilljarðasta'),
-    (hndrds_ptrn_11 + "100(\.000){3}\.$", '^.*$', 'hundred billions', ' eitt hundraðmilljarðasta'),
-    ("^100(\.000){3}\.$", '^.*$', 'hundred billions', 'hundraðmilljarðasta')]
+ordinal_big_tuples = [(ones_ptrn_no11 + "1\.000\.0([01][1-9]|10)\.$", '.*', 'millions', ' einmilljónasta og'),
+    ("^1\.000\.0([01][1-9]|10)\.$", '.*', 'millions',' milljónasta og'),
+    (ones_ptrn_no11 + "1\.000\.000\.$", '.*', 'millions', ' einmilljónasta'),
+    ("^1\.000\.000\.$", '.*', 'millions', ' milljónasta'),
+    (tns_ptrn + "10\.000\.0([01][1-9]|10)\.$", '.*', 'ten millions', ' tímilljónasta og'),
+    (tns_ptrn + "10\.000\.000\.$", '.*', 'ten millions', ' tímilljónasta'),
+    (hndrds_ptrn_11 + "100\.000\.0([01][1-9]|10)\.$", '.*', 'hundred millions', ' eitt hundraðmilljónasta og'),
+    ("^100\.000\.0([01][1-9]|10)\.$", '.*', 'hundred millions', 'hundraðmilljónasta og'),
+    (hndrds_ptrn_11 + "100(\.000){2}\.$", '.*', 'hundred millions', ' eitt hundraðmilljónasta'),
+    ("^100(\.000){2}\.$", '.*', 'hundred millions', 'hundraðmilljónasta'),
+    (ones_ptrn_no11 + "1(\.000){2}\.0([01][1-9]|10)\.$", '.*', 'billions', ' einmilljarðasta og'),
+    ("^1(\.000){2}\.0([01][1-9]|10)\.$", '.*', 'billions', 'milljarðasta og'),
+    (tns_ptrn + "10(\.000){2}\.0([01][1-9]|10)\.$", '.*', 'ten billions', 'tímilljarðasta og'),
+    (hndrds_ptrn_11 + "100(\.000){2}\.0([01][1-9]|10)\.$", '.*', 'hundred billions', ' eitt hundrað milljarðasta og'),
+    ("^100(\.000){2}\.0([01][1-9]|10)\.$", '.*', 'hundred billions', 'hundraðmilljarðasta og'),
+    (ones_ptrn_no11 + "1(\.000){3}\.$", '.*', 'billions', ' einmilljarðasta'),
+    ("^1(\.000){3}\.$", '.*', 'billions', 'milljarðasta'),
+    (tns_ptrn + "10(\.000){3}\.$", '.*', 'ten billions', 'tímilljarðasta'),
+    (hndrds_ptrn_11 + "100(\.000){3}\.$", '.*', 'hundred billions', ' eitt hundraðmilljarðasta'),
+    ("^100(\.000){3}\.$", '.*', 'hundred billions', 'hundraðmilljarðasta')]
 
 for rule, letter in dozens_ordinal_letters:
     ordinal_big_tuples.append((ones_ptrn_no11 + "1\.000\.0([01][1-9]|10)\.$", rule, 'millions', ' einmilljón' + letter + ' og'))

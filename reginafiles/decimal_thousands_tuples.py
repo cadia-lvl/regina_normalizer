@@ -2,16 +2,16 @@ from number_patterns import zeropnt_ptrn, ones_ptrn_no11, dec_ptrn_def
 from tuple_rules import ones_zip, dec_ones_male
 
 decimal_thousands_tuples = [
-((zeropnt_ptrn + "\d{9}0\d*$"), '^.*$', 'point10', ' núll'),
-((zeropnt_ptrn + "\d{8}0\d*$"), '^.*$', 'point9', ' núll'),
-((zeropnt_ptrn + "\d{7}0\d*$"), '^.*$', 'point8', ' núll'),
-((zeropnt_ptrn + "\d{6}0\d*$"), '^.*$', 'point7', ' núll'),
-((zeropnt_ptrn + "\d{5}0\d*$"), '^.*$', 'point6', ' núll'),
-((zeropnt_ptrn + "\d{4}0\d*$"), '^.*$', 'point5', ' núll'),
-((zeropnt_ptrn + "\d{3}0\d*$"), '^.*$', 'point4', ' núll'),
-((zeropnt_ptrn + "\d{2}0\d*$"), '^.*$', 'point3', ' núll'),
-((zeropnt_ptrn + "\d{2}0\d*$"), '^.*$', 'point2', ' núll'),
-((zeropnt_ptrn + "0\d*$"), '^.*$', 'points', ' komma núll')]
+((zeropnt_ptrn + "\d{9}0\d*$"), '.*', 'point10', ' núll'),
+((zeropnt_ptrn + "\d{8}0\d*$"), '.*', 'point9', ' núll'),
+((zeropnt_ptrn + "\d{7}0\d*$"), '.*', 'point8', ' núll'),
+((zeropnt_ptrn + "\d{6}0\d*$"), '.*', 'point7', ' núll'),
+((zeropnt_ptrn + "\d{5}0\d*$"), '.*', 'point6', ' núll'),
+((zeropnt_ptrn + "\d{4}0\d*$"), '.*', 'point5', ' núll'),
+((zeropnt_ptrn + "\d{3}0\d*$"), '.*', 'point4', ' núll'),
+((zeropnt_ptrn + "\d{2}0\d*$"), '.*', 'point3', ' núll'),
+((zeropnt_ptrn + "\d{2}0\d*$"), '.*', 'point2', ' núll'),
+((zeropnt_ptrn + "0\d*$"), '.*', 'points', ' komma núll')]
 
 for rules in ones_zip + dec_ones_male:
     for rule, string, number in ones_zip:
