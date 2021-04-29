@@ -2,7 +2,7 @@
 
 Download POS tagger v2.0.0 from https://github.com/cadia-lvl/POS and have the file `tagger-v2.0.0.pt` in the same folder as all the files.
 
-`pip install tokenizer``
+`pip install tokenizer`
 
 ## To run in notebook
 
