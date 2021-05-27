@@ -85,7 +85,7 @@ def wlink_fun(text, ptrn=ap.link_ptrn_all):
         substr = " ".join(text)
         for symbol, word in nh.wlink_numbers:
             substr = re.sub(symbol, word, substr)
-    return substr
+        return substr
 
 # Fill in the number appropriately based on pattern
 def number_findall(word, tag, domain):
