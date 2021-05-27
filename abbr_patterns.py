@@ -17,7 +17,7 @@ weight_ptrn = r"\b(t|[knmµpazy]?gr?|lbs)\.?\b"
 
 # The link patterns handle external patterns like https://mbl.is/innlent, internal patterns like https://localholst:8888, 
 # mail patterns like name@address.com, twitter handles like @handle and hashtags, e.g. #thisrules2021
-link_ptrn_external = "^(https?:\/\/)?(www\.)?([A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]+)?\.[A-Za-z]+ ?(\/[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d_\?\.=\-\&\%\#]*)+$"
+link_ptrn_external = "(https?:\/\/)?(www\.)?([A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.\/]+)?\.[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.\/]+"
 link_ptrn_internal = "(file|(https?:\/\/)?localhost):[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d_\?\/\.=\-\&\%\#]+"
 link_ptrn_mail = "[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]*@[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]+(\.[A-Za-z])?"
 link_ptrn_hashtag = "# ?[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_]+"
