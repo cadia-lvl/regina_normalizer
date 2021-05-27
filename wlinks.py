@@ -1,6 +1,6 @@
 import re
 
-link_ptrn_external = "^(https?:\/\/)?(www\.)?([A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]+)?\.[A-Za-z]+ ?(\/[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d_\?\.=\-\&\%\#]*)+$"
+link_ptrn_external = "^(https?:\/\/)?(www\.)?([A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.\/]+)?"
 link_ptrn_internal = "(file|(https?:\/\/)?localhost):[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d_\?\/\.=\-\&\%\#]+"
 link_ptrn_mail = "[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]*@[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.]+(\.[A-Za-z])?"
 link_ptrn_hashtag = "# ?[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_]+"
@@ -38,4 +38,4 @@ def wlink_fun(text, ptrn=link_ptrn_all):
         substr = " ".join(text)
         for symbol, word in wlink_numbers:
             substr = re.sub(symbol, word, substr)
-    return substr
+        return substr
