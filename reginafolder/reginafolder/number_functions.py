@@ -2,37 +2,41 @@
 import re
 import pos
 import sys
+import os
 
-import number_help as nh 
+from . import number_help as nh 
 
-import abbr_patterns as ap
-import abbr_functions as af
+from . import abbr_patterns as ap
+from . import abbr_functions as af
 
-import cardinal_ones_tuples as cot
-import cardinal_thousands_tuples as ctt
-import cardinal_million_tuples as cmt
-import cardinal_big_tuples as cbt
-import ordinal_ones_tuples as oot
-import ordinal_thousands_tuples as ott
-import ordinal_million_tuples as omt
-import ordinal_big_tuples as obt
-import decimal_thousands_tuples as dtt
-import fraction_tuples as ft
-import sport_tuples as st
-import time_tuples as tt
+from . import cardinal_ones_tuples as cot
+from . import  cardinal_thousands_tuples as ctt
+from . import  cardinal_million_tuples as cmt
+from . import  cardinal_big_tuples as cbt
+from . import  ordinal_ones_tuples as oot
+from . import  ordinal_thousands_tuples as ott
+from . import  ordinal_million_tuples as omt
+from . import  ordinal_big_tuples as obt
+from . import  decimal_thousands_tuples as dtt
+from . import  fraction_tuples as ft
+from . import  sport_tuples as st
+from . import  time_tuples as tt
 
-import symbols_dict as sd
+from . import  symbols_dict as sd
 
+path_to_current_file = os.path.realpath(__file__)
+current_directory = os.path.split(path_to_current_file)[0]
+path_to_tagger = os.path.join(current_directory, "tagger-v2.0.0.pt")
 
 tagger = pos.Tagger(
-    model_file="tagger-v2.0.0.pt",
+    model_file=path_to_tagger,
     device="cpu",
 )
 
 cardinal_thousand_tuples = cot.cardinal_ones_tuples + ctt.cardinal_thousands_tuples
 cardinal_million_tuples = cardinal_thousand_tuples + cmt.cardinal_million_tuples
 cardinal_big_tuples = cardinal_million_tuples + cbt.cardinal_big_tuples
-ordinal_thousand_tuples = oot.ordinal_ones_tuples + ott.ordinal_thousands_tuples + ctt.cardinal_thousands_tuples
+ordinal_thousand_tuples = oot.ordinal_ones_tuples + ctt.cardinal_thousands_tuples + ott.ordinal_thousands_tuples
 ordinal_million_tuples = ordinal_thousand_tuples + cmt.cardinal_million_tuples + omt.ordinal_million_tuples
 ordinal_big_tuples = ordinal_million_tuples + cbt.cardinal_big_tuples + obt.ordinal_big_tuples
 decimal_thousand_tuples = cardinal_thousand_tuples + dtt.decimal_thousands_tuples

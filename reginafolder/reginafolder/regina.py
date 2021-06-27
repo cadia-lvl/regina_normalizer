@@ -2,13 +2,15 @@ import re
 import sys
 from tokenizer import split_into_sentences
 import time
-import abbr_functions as af
-import number_functions as nf
+from . import abbr_functions as af
+from . import number_functions as nf
 
 
-sent = sys.argv[1]
-domain = sys.argv[2]
-sent = af.replace_abbreviations(sent, domain)
-sent = nf.handle_sentence(sent, domain)
-print(sent)
+def handle_input(sent, domain):
+	sent = af.replace_abbreviations(sent, domain)
+	sent = nf.handle_sentence(sent, domain)
+	#print(sent)
+	return sent
+	
+#handle_input(sys.argv[1], sys.argv[2])
 

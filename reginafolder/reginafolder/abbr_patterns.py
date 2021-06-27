@@ -11,10 +11,6 @@ accdatgen_words_comb = accdat_words_comb + "|" + gen_words
 amounts = "([Hh]undr[au]ð|HUNDR[AU]Ð|[Þþ]úsund|ÞÚSUND|[Mm]illjón(ir)?|MILLJÓN(IR)?)"
 # Dates can have a date consisting of a day from 01. to 31., a month, and a year of two to four digits
 date_ptrn = r"^((([012]?[1-9]|3[01])\. ?)?(jan(úar)?|feb(rúar)?|mars?|apr(íl)?|maí|jú[nl]í?|ág(úst)?|sep(t(ember)?)?|okt(óber)?|nóv(ember)?|des(ember)?) )\d{2,4}$"
-
-# Weight is a ton (t), kg, ng, mg, µg, pg, ag, zg, yg, gr or lbs
-weight_ptrn = r"\b(t|[knmµpazy]?gr?|lbs)\.?\b"
-
 # The link patterns handle external patterns like https://mbl.is/innlent, internal patterns like https://localholst:8888, 
 # mail patterns like name@address.com, twitter handles like @handle and hashtags, e.g. #thisrules2021
 link_ptrn_external = "(https?:\/\/)?(www\.)?([A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.\/]+)?\.[A-ZÁÐÉÍÓÚÝÞÆÖa-záðéíóúýþæö\d\-_\.\/]+"

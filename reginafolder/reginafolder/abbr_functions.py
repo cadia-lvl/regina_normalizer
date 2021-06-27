@@ -1,22 +1,30 @@
 import re
 import json
+import os
 
-import area_dict as ad
-import currency_dict as cd
-import distance_dict as dd
-import electronic_dict as ed
-import period_dict as pd
-import rest_dict as rd
-import time_dict as td
-import volume_dict as vd
-import weight_dict as wd
-import pre_help_dicts as phd
-import symbols_dict as sd
+from . import  area_dict as ad
+from . import  currency_dict as cd
+from . import  distance_dict as dd
+from . import  electronic_dict as ed
+from . import  period_dict as pd
+from . import  rest_dict as rd
+from . import  time_dict as td
+from . import  volume_dict as vd
+from . import  weight_dict as wd
+from . import  pre_help_dicts as phd
+from . import  symbols_dict as sd
 
-abbr_dict = json.load(open("abbrdict.txt"))
+path_to_current_file = os.path.realpath(__file__)
+current_directory = os.path.split(path_to_current_file)[0]
+path_to_abbr = os.path.join(current_directory, "abbrdict.txt")
+path_to_direction = os.path.join(current_directory, "directiondict.txt")
+path_to_denominator = os.path.join(current_directory, "denominatordict.txt")
+
+
+abbr_dict = json.load(open(path_to_abbr))
 direction_ptrn = "[SN]?V|N|[SN]?A|S"
-direction_dict = json.load(open("directiondict.txt"))
-denominator_dict = json.load(open("denominatordict.txt"))
+direction_dict = json.load(open(path_to_direction))
+denominator_dict = json.load(open(path_to_denominator))
 
 pre_help_dict = phd.pre_help_dicts
 area_dict = ad.make_area_dict()

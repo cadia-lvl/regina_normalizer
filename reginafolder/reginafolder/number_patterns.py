@@ -102,7 +102,7 @@ fyrsta = r"[nl](ke[oþe]|ven|he[noþe])-?(g?s?|[svo]?[fme]?)"
 fyrstu = r"[nl](([kvh]f[noþe])|(ve[oþe]))-?(g?s?|[svo]?[fme]?)"
 
 # when a number is not followed by a noun or an adjective
-nonoun = r"^(?![nl][kvh][ef][noþe]-?((g?s?)|([svo]?[fme]?)))[a-záðéíóúýþæö\d\-]+$"
+nonoun = r"^(?![nl][kvh][ef][noþe]-?((g?s?)|([svo]?[fme]?)))[a-záðéíóúýþæö\d\-]*$"
 
 # NUMBER RULES
 

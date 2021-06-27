@@ -16,15 +16,15 @@ decimal_cols_big= ['hundred billions', 'ten billions','billions', 'hundred milli
 # time, timedigit, sport
 time_sport_cols = ['first_ten', 'first_one','between_teams','second_ten', 'second_one']
 
-ordinal_thousand_ptrn = "^([1-9]\.?\d{3}|[1-9]\d{0,2})\.$"
-ordinal_million_ptrn = "^[1-9]\d{0,2}\.\d{3}\.$"
+ordinal_thousand_ptrn = "^([1-9]\.?\d{3}|[1-9]\d{0,2}|0)\.$"
+ordinal_million_ptrn = "^[1-9]\d{0,2}\.?\d{3}\.$"
 ordinal_big_ptrn = "^[1-9]\d{0,2}(\.\d{3}){2,3}\.$"
 
 cardinal_thousand_ptrn = "^([1-9]\.?\d{3}|[1-9]\d{0,2})$"
-cardinal_million_ptrn = "^[1-9]\d{0,2}\.\d{3}$"
+cardinal_million_ptrn = "^[1-9]\d{0,2}\.?\d{3}$"
 cardinal_big_ptrn = "^[1-9]\d{0,2}(\.\d{3}){2,3}$"
 
-decimal_thousand_ptrn = "^([1-9]\.?\d{3}|[1-9]\d{0,2}),\d+$"
+decimal_thousand_ptrn = "^([1-9]\.?\d{3}|[1-9]\d{0,2}|0),\d+$"
 decimal_big_ptrn = "^[1-9]\d{0,2}\.?(\d{3}){1,3},\d+$"
 
 fraction_ptrn = "^([1-9]\d{0,2} ?)?([1-9]\d*\/([2-9]|[1-9]\d+)|(½|⅓|⅔|¼|¾))$"

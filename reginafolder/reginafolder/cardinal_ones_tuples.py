@@ -1,13 +1,13 @@
-from tuple_rules import ones_zip, tens_zip
-from number_patterns import ones_ptrn_no11, dec_ptrn, tns_ptrn
+from . import tuple_rules as tp
+from . import number_patterns as npa
 
 # pattern, tag, column, wo
 
-cardinal_ones_tuples = [("^0(,\d+)?$", 'ones', 'núll')]
+cardinal_ones_tuples = [("^0(,\d+)?$", 'ones', 'núll ekkert að frétta hér?')]
 
-for rule, string, number in ones_zip:
-    cardinal_ones_tuples.append(((ones_ptrn_no11 + number + dec_ptrn), rule, 'ones', string))
+for rule, string, number in tp.ones_zip:
+    cardinal_ones_tuples.append(((npa.ones_ptrn_no11 + number + npa.dec_ptrn), rule, 'ones', string))
     
-for string, number in tens_zip:
-    cardinal_ones_tuples.append((tns_ptrn + number + dec_ptrn, '.*', 'dozens', string))
+for string, number in tp.tens_zip:
+    cardinal_ones_tuples.append((npa.tns_ptrn + number + npa.dec_ptrn, '.*', 'dozens', string))
 
