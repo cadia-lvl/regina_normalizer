@@ -25,7 +25,10 @@ For normalization, run:
 for example
 
 `python3 -W ignore -m regina_normalizer.main "10.010.000 kr aukalega" other`
+
 tíu milljónir og tíu þúsund krónur aukalega 
+
 `python3 -W ignore -m regina_normalizer.main "Leikurinn for 3 - 2" sport`
+
 Leikurinn for  þrjú  tvö 
 
