@@ -3,6 +3,7 @@ import re
 import pos
 import sys
 import os
+import pos
 
 from . import number_help as nh 
 
@@ -28,9 +29,14 @@ path_to_current_file = os.path.realpath(__file__)
 current_directory = os.path.split(path_to_current_file)[0]
 path_to_tagger = os.path.join(current_directory, "tagger-v2.0.0.pt")
 
-tagger = pos.Tagger(
-    model_file=path_to_tagger,
-    device="cpu",
+# Initialize the tagger
+device = torch.device("cpu")  # CPU
+tagger: pos.Tagger = torch.hub.load(
+    repo_or_dir="cadia-lvl/POS",
+    model="tag", # This specifies which model to use. Set to 'tag_large' for large model.
+    device=device,
+    force_reload=False,
+    force_download=False,
 )
 
 cardinal_thousand_tuples = cot.cardinal_ones_tuples + ctt.cardinal_thousands_tuples
