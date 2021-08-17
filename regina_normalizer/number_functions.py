@@ -1,9 +1,9 @@
 
 import re
-import pos
 import sys
 import os
 import pos
+import torch
 
 from . import number_help as nh 
 
@@ -24,10 +24,6 @@ from . import  sport_tuples as st
 from . import  time_tuples as tt
 
 from . import  symbols_dict as sd
-
-path_to_current_file = os.path.realpath(__file__)
-current_directory = os.path.split(path_to_current_file)[0]
-path_to_tagger = os.path.join(current_directory, "tagger-v2.0.0.pt")
 
 # Initialize the tagger
 device = torch.device("cpu")  # CPU
