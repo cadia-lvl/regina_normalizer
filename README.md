@@ -1,12 +1,36 @@
-## Prerequisites
+Run `pip install regina-normalizer`
 
-`pip install git+https://github.com/cadia-lvl/POS.git@v3.0.0`
+In a python shell, run:
 
-`pip install tokenizer`
+`import regina_normalizer.normalizer`
 
-## Version to choose
+**Input string**
 
-You can choose to run a package-version (with tests) from command line in `regina_normalizer_pkg`, with a single text string where the output is returned on a command line or with a file and the output is written to another file. 
+`normalizer.input_string({text_string}, {domain})`
 
-or a simpler version in `regina_normalizer_no_pkg`. You can run the simple version from command line (for single text strings or input files) or in a jupyter notebook. 
+Example:
+
+`normalizer.input_string("Leikurinn fór 2-2 fyrir KR.", "sport")`
+>>> Leikurinn fór tvö tvö fyrir K R .
+
+**Input file**
+
+`normalizer.input_file({input_file}, {output_file}, "other")`
+
+Example:
+
+`normalizer.input_file("input.txt", "output.txt", "other")`
+
+input.txt:
+
+```Þetta þarf að norma a.m.k. 2x. Ég verð 3ja ára í sumar.
+Símanr er 888-3492, en hjá þér?
+Þetta ætti að taka 2-3 klst.```
+
+output.txt
+
+```Þetta þarf að norma að minnsta kosti tvö x . Ég verð þriggja ára í sumar . Símanúmer er átta átta átta <sil> þrír fjórir níu tveir , en hjá þér ? Þetta ætti að taka tvö til þrjár klukkustundir .```
+
+
+
 
