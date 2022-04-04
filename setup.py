@@ -14,6 +14,7 @@ setup(
 	long_description = long_description,
 	long_description_content_type = "text/markdown",
 	packages=find_packages(),
+	package_data={"": ["*.txt"]},
 	include_package_data=True,
 	install_requires=['setuptools', 'pos >= v2.1.0', 'wandb'],
 	python_requires='>=3.5',
