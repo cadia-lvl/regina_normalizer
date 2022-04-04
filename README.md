@@ -1,7 +1,8 @@
 **Dependencies**
 
 `pip install git+https://github.com/cadia-lvl/POS.git@v3.1.0`
-`pip install wandb
+
+`pip install wandb`
 
 Run `pip install regina-normalizer`
 
