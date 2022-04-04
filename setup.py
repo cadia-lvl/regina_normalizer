@@ -5,7 +5,7 @@ with open("README.md", "r") as readme:
 
 setup(
 	name="regina-normalizer",
-	version="0.0.3",
+	version="0.0.6",
 	author = "Helga Svala Sigurðardóttir, Anna Björk Nikulásdóttir",
 	author_email = "helgas@ru.is",
 	url="https://github.com/cadia-lvl/regina-normalizer/tree/master/regina_package",
